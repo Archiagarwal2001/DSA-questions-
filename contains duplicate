@@ -1,0 +1,18 @@
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        bool ans = false;
+        int duplicate = -1;
+        sort(nums.begin(),nums.end());
+        for(int i = 1 ; i < nums.size(); i++){
+            if(nums[i] == nums[i-1]){
+                duplicate = 1;
+                break ;
+            }
+        }
+        if(duplicate == 1){
+            ans = true ;
+        }
+        return ans;
+    }
+};
